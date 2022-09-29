@@ -1,0 +1,18 @@
+5) What string method can be used to convert string into array ?
+Ans= The string is converted into array split() method is used.
+    str="hello";
+    console.log(typeof(str));
+    a=str.Array
+    console.log(typeof(a));
+
+6)  What string method can be used to check the occurrence of a specified
+text in a string?
+Ans= includes() method is used to check the occurrence of a specified text in a string.
+    example:
+            str="hello"
+            console.log(str.includes("o"));
+
+7) How can you break a string to a newline in Javascript ?
+Ans=using "\n" we can break a string to a newline in Javascript.
+    example:
+        console.log("hello \n world");
