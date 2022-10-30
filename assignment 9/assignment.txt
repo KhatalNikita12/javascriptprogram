@@ -1,0 +1,37 @@
+question 1. Carefully observe this example.
+    a) Is the InnerFunction() a closure?
+    b) What is output of this program
+    
+    function OuterFunction()
+    { var outerVariable = 100;
+    function InnerFunction() {
+    alert(outerVariable);
+    }
+    return InnerFunction;
+    }
+    var innerFunc = OuterFunction();
+    innerFunc();
+Answer:
+    a)=> yes. InnerFunction() is closure because InnerFunction has accses of outerVariable which is in OuterFunction.
+    b)=> output of program  is 100 in alert box  on browser .
+--------------------------------------------------------------------------------------------------------------
+question 2. What is the difference between a closure and a scope ?
+    Answer=>
+            Whenever you create a function within another function, then the inner function is closure. 
+            This closure is usually returned so you can use the outer function's variables at a later time. 
+            Whereas a scope in JavaScript defines what variables you have access to.
+------------------------------------------------------------------------------------------------------------------
+question 3. What is a lexical scope and how is it related to closure?
+Answer=>The lexical scope allows a function scope to access statically the 
+        variables from the outer scopes.
+        Finally, a closure is a function that captures variables from its lexical scope.
+---------------------------------------------------------------------------------------------
+question 4. Output of following closure ?
+for (var i = 0; i < 3; i++) {
+setTimeout(function log() {
+console.log(i); // What is logged?
+}, 1000);
+}
+
+Answer=>log() function access the value of i which is print 3 for 3 time after 1 second of we run the program
+        because od setTimeout function.

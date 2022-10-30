@@ -1,0 +1,32 @@
+<!-- 3). Write a regular expression that matches only a prime number.
+Numbers will be presented as strings.
+Example
+“7” ➞ true
+“134” ➞ false -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prime number</title>
+</head>
+<body>
+    <form>
+        <input id="num" placeholder="number" type="number"/><br/></form><br/>
+        <label id="lbl" style="color: red;">false</label>
+ <button onclick="validate()" type="button">validate</button>
+</body>
+<script>
+    function validate(){
+        let text=document.getElementById("num").value  
+        let regex=/^1?$|^(11+?)\1+$/; 
+        if(regex.test(text)){
+                document.getElementById("lbl").innerHTML="true";
+    }
+    else{
+    document.getElementById("lbl").innerHTML="false";
+    }
+}
+</script>
+</html>

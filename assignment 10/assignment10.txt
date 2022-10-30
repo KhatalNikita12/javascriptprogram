@@ -1,0 +1,47 @@
+                                 Javascript Assignment 10
+Question 1. Are Higher Order functions and Call back functions the same ? If not,
+briefly explain about both functions.
+answer=>Higher-Order Functions and Callback Functions are different.
+	i) Higher-Order Functions: A function that takes another function as an argument and returns a function as a 	value. ii)Callback Functions: A function that is passed to another function.
+--------------------------------------------------------------------------------------------------------------
+Question 2. Is filter a Higher Order function in Javascript ? If yes, why ?
+Answer=>filter is a higher-order function that processes a data structure (usually a list) in some order to produce a 	new data structure containing exactly those elements of the original data structure for which a given predicate 	returns the boolean value true 
+-------------------------------------------------------------------------------------------------------------------
+question 3.Give an example of a Higher Order function and a call back function
+used in the same program.
+	Answer=>function foo(arr, n) {
+    const output = [];
+    for (let i = 0; i < arr.length; i++) {
+      output.push(n(arr[i]));
+    }
+    return output;
+  }
+  
+  function multiplyBy2(input) {
+    return input * 2;
+  }
+  const result = foo([1, 2, 3], multiplyBy2);
+  console.log(result);
+-----------------------------------------------------------------------------------------------------------------------
+QUESTION 4)4. Carefully check the example below:
+a) What will be the output of this program ?
+b) Which function is a Higher Order function here ?
+	const names= ['John', 'Tina','Kale','Max']
+	function useFunction(arr,fn){
+	for(let i=0; i<arr.length; i++){
+	fn(arr[I]);
+	}
+	}
+	function argFn (name){
+	console.log("Hello " + name );
+	}
+	useFunction(names,argFn);
+Answer=> 
+	a)=> program throw error because of in fn(arr[I]); I used in uppercase and in for i is in lower case
+	but if  we write is i in lowercase the output is "hello" and every element in name 
+	for ex: Hello John
+		Hello Tina
+		Hello kale
+		Hello Max
+
+
