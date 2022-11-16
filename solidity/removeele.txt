@@ -1,0 +1,18 @@
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.3;
+contract removearrele{
+    uint[] public num=[1,2,3,4,5,6];
+    function getvalues() public view returns (uint[] memory)
+{
+    return num;
+}
+   
+    function remove(uint index) public{
+    num[index] = num[num.length - 1];
+    num.pop();
+  }
+}
+/*output
+remove=2
+getvalue=0:uint256[]: 1,2,6,4,5
+*/
