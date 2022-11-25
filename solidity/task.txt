@@ -1,0 +1,97 @@
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.3;
+contract structure{
+struct Book{
+    string title;
+    string author;
+    uint bookID;
+    uint price;
+}
+Book book;
+function setBook() public
+{
+    book=Book("blockchain for beginners","Ineuron",4,1000);
+}
+function getBookID() public view returns(uint)
+{
+    return book.bookID;
+}
+function gettitle() public view returns(string memory){
+    return book.title;
+}
+function getauthor() public view returns(string memory){
+    return book.author;
+}
+function getprice() public view returns(uint){
+    return book.price;
+}
+}
+--------------------------------------------------------------------------------------
+when we used memory keyword gas value are as follow
+After deploy
+gas=388592
+transaction cost=337906
+execution cost=337906
+
+After setbook
+gas=	127442 gas
+transaction cost=	110819 gas 
+execution cost=	110819 gas
+1)for getBookID()=
+	execution cost=	23529 gas 
+2) for gettitle=
+	execution cost=	24533 gas
+
+3) for getauthor()=
+	execution cost=	24577 gas
+4)for getprice=
+	execution cost=	23485 gas 
+------------------------------------------------------------------------------------------
+when we used calldata keyword gas value are as follow
+//SPDX-License-Identifier:MIT
+pragma solidity ^0.8.3;
+contract structure{
+struct Book{
+    string title;
+    string author;
+    uint bookID;
+    uint price;
+}
+Book book1;
+function setBook() public
+{
+    book1=Book("blockchain for beginners","Ineuron",4,1000);
+}
+function getBookId() public view returns(uint ){
+return book1.bookID;
+}
+function gettitle(string calldata a ) public pure returns(string calldata){
+    return  a;
+}
+function getauthor(string calldata b) public pure  returns(string calldata){
+    return b;
+}
+function getprice() public view returns(uint  ){
+    return book1.price;
+}
+}
+After deploy
+gas=388592
+transaction cost=337906
+execution cost=337906
+
+After setbook
+gas=	127442 gas
+transaction cost=	110819 gas 
+execution cost=	110819 gas 
+1)for getBookID()=
+	execution cost	23529 gas 
+2) for gettitle=
+	execution cost	22651 gas
+3) for getauthor()=
+	execution cost	22491 gas
+4)for getprice=
+	execution cost	23485 gas
+
+------------------------------------------------------------------------------------------
+conclusion=By using calldata for string we can reduced gas cost.
